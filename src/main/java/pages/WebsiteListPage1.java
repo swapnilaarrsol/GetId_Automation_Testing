@@ -1078,11 +1078,13 @@ public class WebsiteListPage1 {
 		System.out.println("click on Logout Top Button");		
 	}
 	
-	public void FunctionalityOfButtonsAndFieldsWithTabEnterButton() throws InterruptedException {
-		System.out.println("25. Verify Functionality of Button and fields with Tab and Enter Button");
+	public void FunctionalityOfButtonsFieldsWithTabEnterKeyUptoAddWebsiteDetails() throws InterruptedException {
+		System.out.println("25. Verify Functionality of Button and fields with Tab and Enter Button up to Add Website Details");
 		Actions act = new Actions(driver);
 		act.sendKeys(Keys.TAB).perform();		
 		System.out.println("Cursor on Getid Logo By Tab Button");
+		
+		//Login Get ID
 		act.sendKeys(Keys.TAB).sendKeys("admin@getid.com").build().perform();
 		System.out.println("Cursor on Login Id Field By Tab Key");
 		System.out.println("Entered Valid Login Id");
@@ -1274,18 +1276,278 @@ public class WebsiteListPage1 {
 		act.sendKeys(Keys.ENTER).perform();
 		System.out.println("Press ENTER Keys for Submit Website Details");	
 		
-		//After Add Website Details Go to Status, Action and Pagination
-		for(int i=0; i<=12; i++) {
-			act.sendKeys(Keys.TAB).perform();
+		act.sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.TAB).build().perform();
+		System.out.println("Cursor on Logout Button By TAB Key");	
+		act.sendKeys(Keys.ENTER).build().perform();
+		System.out.println("Press ENTER Key for Logout Application");	
+	}
+	
+	public void FunctionalityOfButtonsFieldsTabEnterKeyStatusAction() throws InterruptedException {
+		System.out.println("26. Verify Functionality of Button and fields with Tab1 and Enter1 Button Status and Actions");
+		Actions act1 = new Actions(driver);
+		act1.sendKeys(Keys.TAB).perform();		
+		System.out.println("Cursor on Getid Logo By Tab Button");
+		act1.sendKeys(Keys.TAB).sendKeys("admin@getid.com").build().perform();
+		System.out.println("Cursor on Login Id Field By Tab Key");
+		System.out.println("Entered Valid Login Id");
+		Thread.sleep(2000);
+		act1.sendKeys(Keys.TAB).sendKeys("123456").build().perform();
+		System.out.println("Cursor on Password Field By Tab Key");
+		System.out.println("Entered Valid Password");
+		Thread.sleep(2000);
+		act1.sendKeys(Keys.TAB).build().perform();
+		System.out.println("Cursor on Eye Password Field By Tab Key");		
+		act1.sendKeys(Keys.TAB).sendKeys(Keys.ENTER).build().perform();
+		System.out.println("Cursor on Login Button By Tab Key");
+		System.out.println("Press Enter Key");
+		System.out.println("Successfully Login Get Id Provider Panel");
+		Thread.sleep(2000);	
+		
+		for(int i=0; i<=11; i++) {
+			act1.sendKeys(Keys.TAB).perform();
 			Thread.sleep(500);	
 		}
 		Thread.sleep(2000);	
 		
-		act.sendKeys(Keys.TAB).perform();	
+		act1.sendKeys(Keys.TAB).perform();	
 		System.out.println("Cursor on Status Toggle Key of First Website By TAB Key");
 		Thread.sleep(1000);	
-		act.sendKeys(Keys.ENTER).perform();
-		System.out.println("Press ENTER for Change Status of Active/Inactive");
-		Thread.sleep(2000);	
+		act1.sendKeys(Keys.SPACE).perform();
+		System.out.println("Press SPACEBAR Key for Change Status of Active/Inactive");
+		Thread.sleep(2000);
+		String StatusValidationMessageText = StatusValidationMessage.getText();
+		System.out.println("Status Validation Message Text : " + StatusValidationMessageText);
+		act1.sendKeys(Keys.SPACE).perform();
+		System.out.println("Press SPACEBAR Key for Change Status of Active/Inactive");
+		Thread.sleep(2000);
+		String StatusValidationMessage1Text = StatusValidationMessage.getText();
+		System.out.println("Status Validation Message Text : " + StatusValidationMessage1Text);
+		act1.sendKeys(Keys.TAB).perform();	
+		System.out.println("Cursor on Action Dropdown of First Website By TAB Key");
+		Thread.sleep(1000);
+		act1.sendKeys(Keys.ENTER).perform();
+		System.out.println("Press ENTER Key for open Action Dropdown options");
+		Thread.sleep(2000);
+		act1.sendKeys(Keys.TAB).perform();	
+		System.out.println("Cursor on Copy Details of First Website By TAB Key");
+		Thread.sleep(1000);
+		act1.sendKeys(Keys.ENTER).perform();
+		System.out.println("Press ENTER Key for copies text");
+		Thread.sleep(2000);
+		Alert al1 = driver.switchTo().alert();
+		Thread.sleep(2000);
+		String alertText = al1.getText();
+		System.out.println("Alert Text : " + alertText);
+		al1.accept();
+		Thread.sleep(2000);
+		for(int i=0; i<=12; i++) {
+			act1.sendKeys(Keys.TAB).perform();
+			Thread.sleep(500);	
+		}
+		act1.sendKeys(Keys.TAB).perform();	
+		System.out.println("Cursor on Action dropdown of First Website By TAB Key");
+		Thread.sleep(1000);
+		act1.sendKeys(Keys.ENTER).perform();
+		System.out.println("Press ENTER Key for open Action Dropdown options");
+		Thread.sleep(2000);
+		act1.sendKeys(Keys.TAB).perform();	
+		System.out.println("Cursor on Copy Details of First Website By TAB Key");
+		Thread.sleep(1000);
+		act1.sendKeys(Keys.TAB).perform();	
+		System.out.println("Cursor on Edit Button of First Website By TAB Key");
+		Thread.sleep(1000);
+		act1.sendKeys(Keys.ENTER).perform();
+		System.out.println("Press ENTER Key for Editing in website details");
+		Thread.sleep(2000);
+		for(int i=0; i<=15; i++) {
+			act1.sendKeys(Keys.TAB).perform();
+			Thread.sleep(500);	
+		}
+		Thread.sleep(2000);
+		act1.sendKeys(Keys.TAB).perform();	
+		System.out.println("Cursor on Submit Button of First Website By TAB Key");
+		Thread.sleep(1000);		
+		act1.sendKeys(Keys.ENTER).perform();
+		System.out.println("Press ENTER Key for submitting edit website details");
+		Thread.sleep(2000);
+		
+		String CompleteAddEditDetailsValidationMessageText = CompleteAddEditDetailsValidationMessage.getText();
+		System.out.println("Complete Add Edit Details Validation Message Text : " + CompleteAddEditDetailsValidationMessageText);
+		
+		for(int i=0; i<=12; i++) {
+			act1.sendKeys(Keys.TAB).perform();
+			Thread.sleep(500);	
+		}
+		Thread.sleep(2000);
+		
+		act1.sendKeys(Keys.TAB).perform();
+		System.out.println("Cursor on Action dropdown of First Website By TAB Key");
+		Thread.sleep(500);	
+		act1.sendKeys(Keys.ENTER).perform();
+		System.out.println("Press ENTER Key for open Action Dropdown options");
+		Thread.sleep(2000);
+		act1.sendKeys(Keys.TAB).perform();	
+		System.out.println("Cursor on Copy Details of First Website By TAB Key");
+		Thread.sleep(1000);
+		act1.sendKeys(Keys.TAB).perform();	
+		System.out.println("Cursor on Edit Button of First Website By TAB Key");
+		Thread.sleep(1000);
+		act1.sendKeys(Keys.TAB).perform();	
+		System.out.println("Cursor on Delete Button of First Website By TAB Key");
+		Thread.sleep(1000);
+		act1.sendKeys(Keys.ENTER).perform();
+		System.out.println("Press ENTER Key for deleting website details");
+		System.out.println("Curson on Ok button");
+		Thread.sleep(2000);
+		act1.sendKeys(Keys.TAB).perform();	
+		System.out.println("Cursor on Cancle Button TAB Key");
+		Thread.sleep(1000);
+		act1.sendKeys(Keys.ENTER).perform();
+		System.out.println("Press ENTER Key for Cancle Deleting website details");
+		Thread.sleep(2000);
+		
+		for(int i=0; i<=12; i++) {
+			act1.sendKeys(Keys.TAB).perform();
+			Thread.sleep(500);	
+		}
+		act1.sendKeys(Keys.TAB).perform();
+		System.out.println("Cursor on Action dropdown of First Website By TAB Key");
+		Thread.sleep(500);	
+		act1.sendKeys(Keys.ENTER).perform();
+		System.out.println("Press ENTER Key for open Action Dropdown options");
+		Thread.sleep(2000);
+		act1.sendKeys(Keys.TAB).perform();	
+		System.out.println("Cursor on Copy Details of First Website By TAB Key");
+		Thread.sleep(1000);
+		act1.sendKeys(Keys.TAB).perform();	
+		System.out.println("Cursor on Edit Button of First Website By TAB Key");
+		Thread.sleep(1000);
+		act1.sendKeys(Keys.TAB).perform();	
+		System.out.println("Cursor on Delete Button of First Website By TAB Key");
+		Thread.sleep(1000);
+		act1.sendKeys(Keys.ENTER).perform();
+		System.out.println("Press ENTER Key for deleting website details");
+		System.out.println("Curson on Ok button");
+		Thread.sleep(2000);
+		act1.sendKeys(Keys.ENTER).perform();
+		System.out.println("Press ENTER Key for confirm deleting website details");
+		Thread.sleep(2000);
+		act1.sendKeys(Keys.ENTER).perform();
+		System.out.println("Again Press ENTER Key for closing confirm deleting website details Popup");
+		Thread.sleep(2000);
 	}
+	
+	public void FunctionalityOfButtonsFieldsTabEnterKeyPagination() throws InterruptedException {
+		System.out.println("26. Verify Functionality of Button and fields with Tab1 and Enter1 Button Status and Actions");
+		Actions act1 = new Actions(driver);
+		act1.sendKeys(Keys.TAB).perform();		
+		System.out.println("Cursor on Getid Logo By Tab Button");
+		act1.sendKeys(Keys.TAB).sendKeys("admin@getid.com").build().perform();
+		System.out.println("Cursor on Login Id Field By Tab Key");
+		System.out.println("Entered Valid Login Id");
+		Thread.sleep(2000);
+		act1.sendKeys(Keys.TAB).sendKeys("123456").build().perform();
+		System.out.println("Cursor on Password Field By Tab Key");
+		System.out.println("Entered Valid Password");
+		Thread.sleep(2000);
+		act1.sendKeys(Keys.TAB).build().perform();
+		System.out.println("Cursor on Eye Password Field By Tab Key");		
+		act1.sendKeys(Keys.TAB).sendKeys(Keys.ENTER).build().perform();
+		System.out.println("Cursor on Login Button By Tab Key");
+		System.out.println("Press Enter Key");
+		System.out.println("Successfully Login Get Id Provider Panel");
+		Thread.sleep(2000);	
+		
+		for(int i=0; i<=61; i++) {
+			act1.sendKeys(Keys.TAB).perform();
+			Thread.sleep(200);	
+		}
+		
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		
+		act1.sendKeys(Keys.TAB).build().perform();
+		System.out.println("Cursor on Qty Entries Field By Tab Key");			
+		act1.sendKeys(Keys.ENTER).build().perform();
+		System.out.println("Press ENTER Key for open dropdown of Qty Entries field");
+		Thread.sleep(2000);		
+		act1.sendKeys(Keys.ENTER).build().perform();
+		System.out.println("Press ENTER Key for open dropdown of Qty Entries field");
+		Thread.sleep(2000);
+		
+		act1.sendKeys(Keys.ARROW_DOWN).build().perform();
+		System.out.println("Press DOWN_ARROW Key for selecting 50 Qty");
+		Thread.sleep(2000);
+		act1.sendKeys(Keys.ENTER).build().perform();
+		System.out.println("Press ENTER Key for Showing 50 Qty Entries");
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		Thread.sleep(2000);
+		act1.sendKeys(Keys.ENTER).build().perform();
+		System.out.println("Press ENTER Key for open dropdown of Qty Entries field");
+		Thread.sleep(2000);
+		act1.sendKeys(Keys.ARROW_DOWN).build().perform();
+		System.out.println("Press DOWN_ARROW Key for selecting 100 Qty");
+		Thread.sleep(2000);
+		act1.sendKeys(Keys.ENTER).build().perform();
+		System.out.println("Press ENTER Key for Showing 100 Qty Entries");
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		Thread.sleep(2000);
+		
+		act1.sendKeys(Keys.ENTER).build().perform();
+		System.out.println("Press ENTER Key for open dropdown of Qty Entries field");
+		Thread.sleep(2000);
+		act1.sendKeys(Keys.ARROW_DOWN).build().perform();
+		System.out.println("Press DOWN_ARROW Key for selecting 200 Qty");
+		Thread.sleep(2000);
+		act1.sendKeys(Keys.ENTER).build().perform();
+		System.out.println("Press ENTER Key for Showing 200 Qty Entries");
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		Thread.sleep(2000);
+		
+		act1.sendKeys(Keys.ENTER).build().perform();
+		System.out.println("Press ENTER Key for open dropdown of Qty Entries field");
+		Thread.sleep(2000);
+		for(int i=1; i<=3; i++) {
+		act1.sendKeys(Keys.ARROW_UP).build().perform();
+		System.out.println("Press DOWN_ARROW Key for selecting 200 Qty");
+		Thread.sleep(2000);
+		}		
+		act1.sendKeys(Keys.ENTER).build().perform();
+		System.out.println("Press ENTER Key for Showing 25 Qty Entries");
+		Thread.sleep(2000);
+		
+		act1.sendKeys(Keys.TAB).build().perform();
+		System.out.println("Cursor on Page Number 1 By TAB Key");	
+		Thread.sleep(2000);
+		act1.sendKeys(Keys.TAB).build().perform();
+		System.out.println("Cursor on Page Number 2 By TAB Key");	
+		Thread.sleep(2000);
+		act1.sendKeys(Keys.ENTER).build().perform();
+		System.out.println("Press ENTER Key for Showing Page 2 Website Entries");
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		Thread.sleep(2000);
+		act1.keyDown(Keys.SHIFT).sendKeys(Keys.TAB).keyUp(Keys.SHIFT).build().perform();
+		System.out.println("Cursor on Page Number 1 By SHIFT and TAB Key");	
+		Thread.sleep(2000);
+		act1.sendKeys(Keys.ENTER).build().perform();
+		System.out.println("Press ENTER Key for Showing Page 1 Website Entries");
+		js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		Thread.sleep(2000);
+		act1.sendKeys(Keys.TAB).build().perform();
+		System.out.println("Cursor on Page Number 2 By TAB Key");	
+		Thread.sleep(2000);
+		act1.sendKeys(Keys.TAB).build().perform();
+		System.out.println("Cursor on NEXT Button By TAB Key");	
+		Thread.sleep(2000);
+		act1.sendKeys(Keys.ENTER).build().perform();
+		System.out.println("Press ENTER Key for Showing NEXT Page Website Entries");
+		Thread.sleep(2000);
+		act1.keyDown(Keys.SHIFT).sendKeys(Keys.TAB).sendKeys(Keys.TAB).sendKeys(Keys.TAB).keyUp(Keys.SHIFT).build().perform();
+		System.out.println("Cursor on PREVIOUS Button By SHIFT and TAB Key");	
+		Thread.sleep(2000);
+		
+		act1.sendKeys(Keys.ENTER).build().perform();
+		System.out.println("Press ENTER Key for Showing PREVIOUS Page Website Entries");
+		Thread.sleep(2000);
+}
+	
 }

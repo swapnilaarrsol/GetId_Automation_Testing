@@ -141,9 +141,19 @@ public class WebsiteListTest1 extends BaseClass {
 //		wlp1.FunctionAvailabelPagesPreviousNextButton();
 //	}
 	
-	@Test //(priority=25)
-	public void testFunctionalityOfButtonsAndFieldsWithTabEnterButton() throws InterruptedException, IOException {
-		wlp1.FunctionalityOfButtonsAndFieldsWithTabEnterButton();
+//	@Test //(priority=25, enabled=false)
+//	public void testFunctionalityOfButtonsFieldsWithTabEnterKeyUptoAddWebsiteDetails() throws InterruptedException, IOException {
+//		wlp1.FunctionalityOfButtonsFieldsWithTabEnterKeyUptoAddWebsiteDetails();
+//	}
+	
+//	@Test //(priority=26, enabled=false)
+//	public void testFunctionalityOfButtonsFieldsTabEnterKeyStatusAction() throws InterruptedException, IOException {
+//		wlp1.FunctionalityOfButtonsFieldsTabEnterKeyStatusAction();
+//	}
+	
+	@Test //(priority=27, enabled=false)
+	public void testFunctionalityOfButtonsFieldsTabEnterKeyPagination() throws InterruptedException, IOException {
+		wlp1.FunctionalityOfButtonsFieldsTabEnterKeyPagination();
 	}
 	
 //	@AfterClass
